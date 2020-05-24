@@ -1,3 +1,14 @@
+;;; flycheck-jenkinsfile.el
+;;
+;; Copyright (c) 2020 Arista Networks
+;;
+;; Author: Rski <rom.skiad@gmail.com>
+;; URL: https://github.com/rski/flycheck-jenkinsfile
+;;
+;; This file is not part of GNU Emacs.
+;;
+;;; License: GPLv3
+
 (require 'flycheck)
 
 (defgroup flycheck-jenkinsfile nil
