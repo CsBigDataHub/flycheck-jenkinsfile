@@ -29,12 +29,14 @@
 
 (flycheck-define-checker
     jenkinsfile
-  "A Jenkins declarative pipeline checker."
+  "A Jenkins declarative pipeline syntax checker using the Jenkins declarative linter.
+See URL `https://www.jenkins.io/doc/book/pipeline/development/#linter'. Using CURL"
   :command ("curl"
 ;;             (option "-H" flycheck-jenkinsfile-jenkins-crumb)
             (eval (when buffer-file-name
                     (concat "-F jenkinsfile=<" buffer-file-name)))
             (eval (concat flycheck-jenkinsfile-jenkins-url "/pipeline-model-converter/validate")))
+  :standard-input t
   :error-patterns (
                    (error line-start "WorkflowScript: " line ": " (message) "@ line " line ", column " column ".")
                    )
